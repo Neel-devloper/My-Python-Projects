@@ -1,6 +1,6 @@
-turn = 0
 import pygame
 import random
+turn = 0
 
 pygame.init()
 screen_height = 500
@@ -27,7 +27,7 @@ def play_with_computer():
             self.text = text
             self.rect = pygame.Rect(x, y, width, height)
 
-    # Initialize boxes with larger size (150x150) and adjacent positions
+
     boxes = [
         Boxes(25, 25, 150, 150, light_gray, ''),  # box1
         Boxes(175, 25, 150, 150, light_gray, ''),  # box2
@@ -45,7 +45,7 @@ def play_with_computer():
     global turn
     game_over = False
     winner = None
-    winning_boxes = None  # To store the winning combination
+    winning_boxes = None  
 
     def computer_turn():
         global turn
@@ -445,15 +445,15 @@ def play_with_another_player():
     pygame.quit()
 
 
-play_with_computer_button = pygame.Rect(125, 400, 350, 75)
-play_with_another_player_button = pygame.Rect(125, 300, 350, 75)
+play_with_computer_button = pygame.Rect(500/2 - 200, 500/2 - 100, 350, 75)
+play_with_another_player_button = pygame.Rect(500/2 - 200, 500/2, 350, 75)
 running = True
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    screen.fill(black)
+    screen.fill(light_blue)
 
     pygame.draw.rect(screen, light_gray, play_with_computer_button)
     pygame.draw.rect(screen, light_gray, play_with_another_player_button)
@@ -475,6 +475,9 @@ while running:
         play_with_computer()
     if play_with_another_player_button.collidepoint(mouse_pos) and pygame.mouse.get_pressed()[0]:
         play_with_another_player()
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_ESCAPE]:
+        running = False
 
     # end
     pygame.display.update()
