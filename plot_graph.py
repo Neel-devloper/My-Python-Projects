@@ -13,7 +13,7 @@ def draw_line(x, y):
     plt.show()
 
 
-p = input("enter points: ")  # (1,12) (0,6)
+p = input("enter points of a line point example (0,0) (1,1): ")
 
 
 def get_line_pos(points):
@@ -43,12 +43,12 @@ def get_line_pos(points):
     # plug in the numbers
     right_side = eq.split("=")[1].strip()
     for z in range(11):
-        x = ""
+        temp = ""
         for y in right_side:
             if y == "x":
-                x += f"*{z}"
+                temp += f"*{z}"
             else:
-                x += y
+                temp += y
 
         x_lis.append(z)
         y_lis.append(eval(x))
