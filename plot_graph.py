@@ -51,7 +51,7 @@ def get_line_pos(points):
                 temp += y
 
         x_lis.append(z)
-        y_lis.append(eval(x))
+        y_lis.append(eval(str(z)))
 
 get_line_pos(p)
 draw_line(x_lis, y_lis)
