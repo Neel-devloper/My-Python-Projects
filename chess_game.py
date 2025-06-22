@@ -4,7 +4,6 @@ import pygame
 
 # Import the python-chess library for chess logic, including board state and legal move validation
 import chess
-from fontTools.subset import prune_hints
 
 # Import a custom chess engine module, likely containing the logic for Black's moves
 import NV_Chess_engine
@@ -56,6 +55,8 @@ for color in ['white', 'black']:
     # Loop over each piece type in PIECE_TYPES
     for piece in PIECE_TYPES:
         # If the color is 'white', define file paths for white piece images
+
+        # change these paths to the paths in your computer
         if color == 'white':
             path_map = {
                 'pawn': '/Users/neelvorani/Desktop/python pycharm projects/assets/white pawn img chess.png',
@@ -159,6 +160,7 @@ while running:
             elif event.key == pygame.K_6:
                 theme_index = 5
             elif event.key == pygame.K_7:
+                
                 theme_index = 6
             elif event.key == pygame.K_8:
                 theme_index = 7
