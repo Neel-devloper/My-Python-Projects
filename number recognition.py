@@ -1,3 +1,7 @@
+
+#This code will not work if you have python 3.11 or more if you do you can run this code on google colab
+
+
 import tensorflow as tf
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.models import Sequential
